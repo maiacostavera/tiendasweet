@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Producto · Tienda Sweet</title>
+  <meta name="description" content="Catálogo de Tienda Sweet. Precios y pedidos por WhatsApp.">
+
+  <!-- WhatsApp lee estas etiquetas sin ejecutar JavaScript, así que todas las
+       fichas comparten la misma vista previa (ver README). -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_AR">
+  <meta property="og:site_name" content="Tienda Sweet">
+  <meta property="og:title" content="Tienda Sweet">
+  <meta property="og:description" content="Catálogo con precios. Elegí lo que te guste y pedilo por WhatsApp.">
+  <!-- <meta property="og:image" content="https://TU-DOMINIO/assets/og-tienda-sweet.jpg"> -->
+
+  <meta name="theme-color" content="#F6F4EC">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+  <script>
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem("tiendasweet-tema"); } catch (e) {}
+      if (t !== "light" && t !== "dark") t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      document.documentElement.dataset.theme = t;
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Manrope:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <script src="js/data.js" defer></script>
+  <script src="js/app.js" defer></script>
+  <script src="js/producto.js" defer></script>
+</head>
+<body class="pagina-ficha">
+  <a class="saltar" href="#ficha">Saltar a la ficha</a>
+
+  <header class="site-header site-header--ficha">
+    <div class="wrap header-row">
+      <a class="brand" href="index.html" aria-label="Tienda Sweet, ir al catálogo">
+        <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+          <path class="brand-tag" d="M14.5 3.5h11l7.5 7.5v23.5a3 3 0 0 1-3 3h-20a3 3 0 0 1-3-3V11z"/>
+          <circle class="brand-hole" cx="20" cy="10" r="2.2"/>
+          <path class="brand-s" d="M24.4 19.4c-.9-1.4-2.5-2.2-4.3-2.2-2.4 0-4.1 1.3-4.1 3.1 0 4.4 8.8 2.6 8.8 7.1 0 2-1.8 3.4-4.6 3.4-2 0-3.7-.8-4.6-2.3"/>
+        </svg>
+        <span class="brand-text">
+          <span class="brand-kicker">Tienda</span>
+          <span class="brand-name">Sweet</span>
+        </span>
+      </a>
+      <button type="button" class="icon-btn" data-theme-toggle aria-label="Cambiar tema">
+        <svg class="icon icono-luna" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19.5 14.6A7.6 7.6 0 0 1 9.4 4.5a7.6 7.6 0 1 0 10.1 10.1z"/></svg>
+        <svg class="icon icono-sol" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2.8v2.2M12 19v2.2M2.8 12H5M19 12h2.2M5.5 5.5l1.5 1.5M17 17l1.5 1.5M5.5 18.5L7 17M17 7l1.5-1.5"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main class="wrap ficha-main">
+    <a class="volver" data-volver href="index.html">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+      <span>Volver al catálogo</span>
+    </a>
+
+    <div id="ficha" tabindex="-1">
+      <noscript><p class="error-texto">Para ver la ficha hace falta activar JavaScript en el navegador.</p></noscript>
+    </div>
+
+    <section class="relacionados" id="relacionados" aria-labelledby="titulo-relacionados" hidden>
+      <h2 class="rotulo relacionados-titulo" id="titulo-relacionados">También te puede gustar</h2>
+      <div class="grilla"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-row">
+      <p><strong>Tienda Sweet</strong> · Consultas y pedidos por WhatsApp.</p>
+      <a class="footer-wa" data-wa-general href="https://wa.me/" target="_blank" rel="noopener">Escribime</a>
+    </div>
+  </footer>
+</body>
+</html>
