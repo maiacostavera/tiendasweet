@@ -57,8 +57,8 @@ const PRODUCTOS = [
   { id: "remeras",           nombre: "Remeras",           categoria: "remeras-y-musculosas", precio: 20000, fotos: [], destacado: true,  nota: "" },
   { id: "remera-floral",     nombre: "Remera floral",     categoria: "remeras-y-musculosas", precio: 15000, fotos: [], destacado: false, nota: "" },
   { id: "chombas",           nombre: "Chombas",           categoria: "remeras-y-musculosas", precio: 20000, fotos: [], destacado: false, nota: "" },
-  { id: "musculosas",        nombre: "Musculosas",        categoria: "remeras-y-musculosas", precio: 18000, fotos: [], destacado: true,  nota: "" },
-  { id: "musculosa-de-nina", nombre: "Musculosa de niña", categoria: "remeras-y-musculosas", precio: 15000, fotos: [], destacado: false, nota: "" },
+  { id: "musculosas",        nombre: "Musculosas",        categoria: "remeras-y-musculosas", precio: 18000, fotos: ["assets/productos/musculosas-1.jpg", "assets/productos/musculosas-2.jpg"], destacado: true,  nota: "" },
+  { id: "musculosa-de-nina", nombre: "Musculosa de niña", categoria: "remeras-y-musculosas", precio: 15000, fotos: ["assets/productos/musculosa-de-nina-1.jpg"], destacado: false, nota: "" },
   { id: "musculosa-verde",   nombre: "Musculosa verde",   categoria: "remeras-y-musculosas", precio: 12000, fotos: [], destacado: false, nota: "" },
   { id: "camisa-escocesa",   nombre: "Camisa escocesa",   categoria: "remeras-y-musculosas", precio: 25000, fotos: [], destacado: false, nota: "" },
 
@@ -70,7 +70,7 @@ const PRODUCTOS = [
   { id: "short-talle-3",         nombre: "Short talle 3",         categoria: "bermudas-y-shorts", precio: 15000, fotos: [], destacado: false, nota: "" },
 
   // Vestidos y camisones
-  { id: "vestido-de-flores", nombre: "Vestido de flores", categoria: "vestidos-y-camisones", precio: 20000, fotos: [], destacado: false, nota: "" },
+  { id: "vestido-de-flores", nombre: "Vestido de flores", categoria: "vestidos-y-camisones", precio: 20000, fotos: ["assets/productos/vestido-de-flores-1.jpg"], destacado: false, nota: "" },
   { id: "camison-talle-3",   nombre: "Camisón talle 3",   categoria: "vestidos-y-camisones", precio: 30000, fotos: [], destacado: false, nota: "" },
   { id: "camison-azul",      nombre: "Camisón azul",      categoria: "vestidos-y-camisones", precio: 22000, fotos: [], destacado: false, nota: "" },
 
@@ -78,7 +78,7 @@ const PRODUCTOS = [
   { id: "malla-talle-4", nombre: "Malla talle 4", categoria: "mallas", precio: 15000, fotos: [], destacado: false, nota: "" },
 
   // Conjuntos
-  { id: "conjunto-animal-print",   nombre: "Conjunto animal print",   categoria: "conjuntos", precio: 28000, fotos: [], destacado: false, nota: "" },
+  { id: "conjunto-animal-print",   nombre: "Conjunto animal print",   categoria: "conjuntos", precio: 28000, fotos: ["assets/productos/conjunto-animal-print-1.jpg"], destacado: false, nota: "" },
   { id: "conjunto-de-nena-blanco", nombre: "Conjunto de nena blanco", categoria: "conjuntos", precio: 20000, fotos: [], destacado: false, nota: "" },
 
   // Ropa de nena
