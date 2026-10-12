@@ -225,7 +225,12 @@ h1, h2, h3, p { margin: 0; }
   to { transform: none; opacity: 1; }
 }
 
-.intro { padding-block: 22px 6px; }
+/* Portada: título y texto con aire, el buscador debajo (no queda fijo). */
+.intro {
+  display: grid;
+  gap: 22px;
+  padding-block: 30px 26px;
+}
 .intro-titulo {
   font-size: clamp(1.6rem, 6.4vw, 2.4rem);
   font-weight: 800;
@@ -233,10 +238,20 @@ h1, h2, h3, p { margin: 0; }
   line-height: 1.1;
 }
 .intro-texto {
-  margin-top: 8px;
+  margin-top: 10px;
   max-width: 44ch;
   color: var(--ink-2);
-  font-size: .98rem;
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+@media (min-width: 768px) {
+  .intro {
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 380px);
+    align-items: end;
+    gap: 40px;
+    padding-block: 40px 30px;
+  }
 }
 
 /* ---------- Buscador y chips ---------- */
@@ -253,19 +268,37 @@ h1, h2, h3, p { margin: 0; }
 }
 .controles.pegado { border-bottom-color: var(--line); }
 
+/* La barra fija lleva solo las categorías; la lupa aparece cuando el
+   buscador ya quedó fuera de la pantalla. */
 .controles-inner {
   display: flex;
-  flex-direction: column;
+  align-items: center;
   gap: 10px;
-  padding-block: 12px 8px;
+  padding-block: 10px;
 }
+
+.ir-buscar {
+  display: none;
+  flex: none;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+  cursor: pointer;
+  transition: border-color .2s;
+}
+.ir-buscar:hover { border-color: var(--ink-2); }
+.ir-buscar:focus-visible { border-radius: 999px; }
+.controles.pegado .ir-buscar { display: grid; animation: girar .3s var(--ease); }
 
 .buscador { position: relative; }
 
 .buscador input {
   width: 100%;
-  height: 46px;
-  padding: 0 46px 0 44px;
+  height: 52px;
+  padding: 0 48px 0 46px;
   border-radius: 999px;
   border: 1px solid var(--line);
   background: var(--surface);
@@ -327,14 +360,19 @@ h1, h2, h3, p { margin: 0; }
 }
 
 .chips {
+  flex: 1;
+  min-width: 0;
   display: flex;
   gap: 8px;
   overflow-x: auto;
-  margin-inline: calc(var(--gutter) * -1);
-  padding: 4px var(--gutter) 6px;
+  margin-right: calc(var(--gutter) * -1);
+  padding: 4px var(--gutter) 4px 2px;
   scroll-padding-inline: var(--gutter);
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
+  /* se desvanece a la derecha para indicar que se puede deslizar */
+  -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 28px), transparent);
+  mask-image: linear-gradient(to right, #000 calc(100% - 28px), transparent);
 }
 .chips::-webkit-scrollbar { display: none; }
 
@@ -377,21 +415,16 @@ h1, h2, h3, p { margin: 0; }
   opacity: .75;
 }
 
+/* En escritorio: una sola fila, chips más compactos. */
 @media (min-width: 768px) {
-  .controles-inner {
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 16px;
-    padding-block: 14px 10px;
-  }
-  .buscador { flex: 0 0 300px; }
-  .chips {
-    flex: 1;
-    flex-wrap: wrap;
-    overflow: visible;
-    margin: 0;
-    padding: 4px 0;
-  }
+  .controles-inner { padding-block: 12px; }
+  .chips { gap: 6px; margin-right: 0; padding-right: 2px; }
+  .chip { height: 36px; padding: 0 12px; gap: 7px; font-size: .86rem; }
+}
+@media (min-width: 1100px) {
+  /* entran todas en una fila: sin degradé de "hay más" */
+  .chips { -webkit-mask-image: none; mask-image: none; gap: 5px; }
+  .chip { padding: 0 11px; gap: 6px; font-size: .84rem; }
 }
 
 /* ---------- Secciones del catálogo ---------- */
@@ -400,8 +433,8 @@ h1, h2, h3, p { margin: 0; }
 #secciones:focus { outline: none; }
 
 .seccion {
-  padding-top: 30px;
-  scroll-margin-top: 140px;
+  padding-top: 34px;
+  scroll-margin-top: 80px;
 }
 
 .seccion-head {
@@ -969,6 +1002,55 @@ h1, h2, h3, p { margin: 0; }
   padding-block: 22px;
 }
 .site-footer strong { color: var(--ink); }
+
+.info {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 28px 0 6px;
+  list-style: none;
+}
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+.info-icono {
+  width: 38px;
+  height: 38px;
+  padding: 8px;
+  border-radius: 10px;
+  background: color-mix(in oklab, var(--accent) 16%, var(--surface));
+  color: var(--accent);
+}
+.info-rotulo {
+  font-family: var(--font-mono);
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+.info-texto {
+  margin-top: 1px;
+  color: var(--ink);
+  font-size: .98rem;
+  font-weight: 600;
+}
+@media (min-width: 768px) {
+  .info { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; padding-top: 36px; }
+}
+
+.firma {
+  padding: 14px 0 26px;
+  border-top: 1px solid var(--line);
+  color: var(--ink-2);
+  font-size: .85rem;
+}
 .footer-wa {
   display: inline-flex;
   align-items: center;

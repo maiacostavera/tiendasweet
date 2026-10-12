@@ -347,7 +347,14 @@
       aplicar();
     });
 
-    // Borde inferior de la barra de búsqueda solo cuando queda pegada arriba.
+    // La lupa de la barra fija vuelve al buscador de la portada.
+    document.getElementById("ir-buscar").addEventListener("click", () => {
+      const reducido = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      window.scrollTo({ top: 0, behavior: reducido ? "auto" : "smooth" });
+      input.focus({ preventScroll: true });
+    });
+
+    // Borde inferior de la barra de categorías solo cuando queda pegada arriba.
     const centinela = document.getElementById("centinela");
     if (centinela && "IntersectionObserver" in window) {
       new IntersectionObserver(([entrada]) => {
