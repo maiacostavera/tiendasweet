@@ -55,7 +55,7 @@ precio, poné `precio: null`: se muestra "Consultar precio" y el mensaje de
    `fotos: ["assets/productos/remera-floral-1.jpg", "assets/productos/remera-floral-2.jpg"]`.
    La primera es la principal; si hay más de una, la ficha muestra miniaturas.
 
-Lo ideal son fotos verticales 3:4 (como salen del celular), de unos 1200 px de
+Las fotos actuales están sobre fondo blanco, recortadas con un programa de quitar fondos; conviene que las nuevas también lo estén, para que el catálogo se vea parejo. Lo ideal son fotos verticales 3:4 (como salen del celular), de unos 1200 px de
 alto y en JPG, para que carguen rápido. Mientras un producto no tiene foto (o si
 la ruta está mal escrita) se muestra la tarjeta "Foto próximamente" con el color
 de su categoría.
