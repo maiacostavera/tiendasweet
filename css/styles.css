@@ -1127,6 +1127,35 @@ h1, h2, h3, p { margin: 0; }
   font-size: .85rem;
 }
 
+.footer-links { display: flex; flex-wrap: wrap; gap: 4px 18px; }
+.footer-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--ink);
+  font-weight: 600;
+  text-underline-offset: 3px;
+}
+
+/* ---------- Páginas legales ---------- */
+
+.legal { max-width: 760px; padding-block: 12px 64px; }
+.legal-rotulo { margin-top: 18px; color: var(--ink-2); }
+.legal-titulo {
+  margin-top: 8px;
+  font-size: clamp(1.9rem, 7vw, 2.6rem);
+  font-weight: 800;
+  letter-spacing: -.03em;
+  line-height: 1.1;
+}
+.legal-fecha { margin-top: 8px; color: var(--ink-2); font-size: .9rem; }
+.legal section { margin-top: 34px; }
+.legal h2 { font-size: 1.15rem; font-weight: 800; letter-spacing: -.01em; }
+.legal p, .legal li { color: var(--ink); line-height: 1.65; }
+.legal p { margin-top: 10px; }
+.legal ul { margin: 10px 0 0; padding-left: 1.2em; }
+.legal li + li { margin-top: 8px; }
+
 /* ---------- Botones flotantes ---------- */
 
 .flotantes {
