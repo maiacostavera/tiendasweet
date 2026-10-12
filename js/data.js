@@ -66,12 +66,12 @@ const PRODUCTOS = [
   { id: "camisa-escocesa",   nombre: "Camisa escocesa",   categoria: "remeras-y-musculosas", precio: 25000, fotos: ["assets/productos/camisa-escocesa-1.jpg"], destacado: false, nota: "" },
 
   // Bermudas y shorts
-  { id: "bermudas-de-gabardina", nombre: "Bermudas de gabardina", categoria: "bermudas-y-shorts", precio: 22000, fotos: ["assets/productos/bermudas-de-gabardina-1.jpg"], destacado: false, nota: "" },
-  { id: "bermudas-de-jean",      nombre: "Bermudas de jean",      categoria: "bermudas-y-shorts", precio: 28000, fotos: ["assets/productos/bermudas-de-jean-1.jpg", "assets/productos/bermudas-de-jean-2.jpg", "assets/productos/bermudas-de-jean-3.jpg"], destacado: false, nota: "" },
-  { id: "bermudas-de-algodon",   nombre: "Bermudas de algodón",   categoria: "bermudas-y-shorts", precio: 15000, fotos: ["assets/productos/bermudas-de-algodon-1.jpg", "assets/productos/bermudas-de-algodon-2.jpg", "assets/productos/bermudas-de-algodon-3.jpg"], destacado: false, nota: "" },
+  { id: "bermudas-de-gabardina", nombre: "Bermudas de gabardina", categoria: "bermudas-y-shorts", precio: 22000, fotos: ["assets/productos/bermudas-de-gabardina-1.jpg", "assets/productos/bermudas-de-gabardina-2.jpg"], destacado: false, nota: "" },
+  { id: "bermudas-de-jean",      nombre: "Bermudas de jean",      categoria: "bermudas-y-shorts", precio: 28000, fotos: ["assets/productos/bermudas-de-jean-1.jpg", "assets/productos/bermudas-de-jean-2.jpg", "assets/productos/bermudas-de-jean-3.jpg", "assets/productos/bermudas-de-jean-4.jpg"], destacado: false, nota: "" },
+  { id: "bermudas-de-algodon",   nombre: "Bermudas de algodón",   categoria: "bermudas-y-shorts", precio: 15000, fotos: ["assets/productos/bermudas-de-algodon-1.jpg", "assets/productos/bermudas-de-algodon-2.jpg", "assets/productos/bermudas-de-algodon-3.jpg", "assets/productos/bermudas-de-algodon-4.jpg", "assets/productos/bermudas-de-algodon-5.jpg"], destacado: false, nota: "" },
   { id: "shorts-de-bano",        nombre: "Shorts de baño",        categoria: "bermudas-y-shorts", precio: 22000, fotos: ["assets/productos/shorts-de-bano-1.jpg", "assets/productos/shorts-de-bano-2.jpg", "assets/productos/shorts-de-bano-3.jpg", "assets/productos/shorts-de-bano-4.jpg", "assets/productos/shorts-de-bano-5.jpg"], destacado: false, nota: "" },
   { id: "short-talle-3",         nombre: "Short talle 3",         categoria: "bermudas-y-shorts", precio: 15000, fotos: ["assets/productos/short-talle-3-1.jpg"], destacado: false, nota: "" },
-  { id: "bermuda-cargo-negra",   nombre: "Bermuda cargo negra",   categoria: "bermudas-y-shorts", precio: null,  fotos: ["assets/productos/bermuda-cargo-negra-1.jpg"], destacado: false, nota: "" },
+  { id: "bermuda-cargo-negra",   nombre: "Bermuda cargo negra",   categoria: "bermudas-y-shorts", precio: null,  fotos: ["assets/productos/bermuda-cargo-negra-1.jpg", "assets/productos/bermuda-cargo-negra-2.jpg"], destacado: false, nota: "" },
 
   // Vestidos y camisones
   { id: "vestido-de-flores", nombre: "Vestido de flores", categoria: "vestidos-y-camisones", precio: 20000, fotos: ["assets/productos/vestido-de-flores-1.jpg"], destacado: false, nota: "" },
