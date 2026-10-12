@@ -744,6 +744,8 @@ h1, h2, h3, p { margin: 0; }
 
 .ficha {
   display: grid;
+  /* minmax(0, …): muchas miniaturas no deben ensanchar la página */
+  grid-template-columns: minmax(0, 1fr);
   gap: 22px;
   /* solo opacidad: un transform acá rompería la barra fija de botones */
   animation: fundido .5s var(--ease) both;
