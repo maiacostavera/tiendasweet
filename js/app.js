@@ -46,6 +46,7 @@
     luna: '<path d="M19.5 14.6A7.6 7.6 0 0 1 9.4 4.5a7.6 7.6 0 1 0 10.1 10.1z"/>',
     volver: '<path d="M19 12H5M11 6l-6 6 6 6"/>',
     flecha: '<path d="M5 12h14M13 6l6 6-6 6"/>',
+    arriba: '<path d="M12 19V5M6 11l6-6 6 6"/>',
     charla: '<path d="M20 11.6a7.6 7.6 0 0 1-11.1 6.7L4.5 19.5l1.3-4.1A7.6 7.6 0 1 1 20 11.6z"/>',
     bolsa: '<path d="M5.5 8.5h13l-1 11.5h-11z"/><path d="M9 10.5V7a3 3 0 0 1 6 0v3.5"/>',
     percha: '<path d="M10.2 6.4a1.8 1.8 0 1 1 1.8 1.8v1.4"/><path d="M12 9.6l-8.4 6.1a.9.9 0 0 0 .5 1.6h15.8a.9.9 0 0 0 .5-1.6L12 9.6"/>',
@@ -72,22 +73,12 @@
     return `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(texto)}`;
   }
 
-  // el/la/los/las según la primera palabra del nombre ("Bermudas de jean" -> "las")
-  function articulo(p) {
-    if (p.articulo) return p.articulo;
-    const palabra = normalizar(p.nombre.split(" ")[0]);
-    if (palabra.endsWith("as")) return "las";
-    if (palabra.endsWith("a")) return "la";
-    if (palabra.endsWith("s")) return "los";
-    return "el";
-  }
-
+  // Mensaje del botón "Pedir por WhatsApp" de la ficha.
   function mensajes(p) {
     return {
-      consulta: `Hola! Vi ${articulo(p)} ${p.nombre} en el catálogo de Tienda Sweet. ¿Qué talles tenés?`,
       pedido: tienePrecio(p)
-        ? `Hola! Quiero pedir: ${p.nombre} — ${precio(p.precio)} (Tienda Sweet)`
-        : `Hola! Quiero pedir: ${p.nombre} (Tienda Sweet). ¿Qué precio tiene?`,
+        ? `Hola! Me interesa el producto ${p.nombre} (${precio(p.precio)}) del catálogo de Tienda Sweet. ¿Qué talles tenés?`
+        : `Hola! Me interesa el producto ${p.nombre} del catálogo de Tienda Sweet. ¿Qué precio y qué talles tenés?`,
     };
   }
 
@@ -128,7 +119,7 @@
         <h3 class="card-name">${esc(p.nombre)}</h3>
         <p class="card-price${tienePrecio(p) ? "" : " sin-precio"}">${precio(p.precio)}</p>
         ${p.nota ? `<p class="card-nota">${esc(p.nota)}</p>` : ""}
-        ${grande ? `<span class="card-more">Ver ficha ${icono("flecha")}</span>` : ""}
+        <span class="card-cta" aria-hidden="true">Ver producto ${icono("flecha")}</span>
       </div>
     </a>`;
   }
@@ -372,12 +363,55 @@
     });
   }
 
+  // Mosaico del hero: la primera foto de un producto de cada categoría
+  // (los destacados primero), hasta 4.
+  function iniciarHero() {
+    const mosaico = document.getElementById("hero-mosaico");
+    if (!mosaico) return;
+    const elegidos = [];
+    CATEGORIAS.forEach((c) => {
+      const p = PRODUCTOS.filter((x) => x.categoria === c.id && x.fotos.length)
+        .sort((a, b) => Number(b.destacado) - Number(a.destacado))[0];
+      if (p && elegidos.length < 4) elegidos.push(p);
+    });
+    if (elegidos.length < 2) { mosaico.hidden = true; return; }
+    mosaico.innerHTML = elegidos.map((p, i) => `
+      <a class="hero-foto" href="${urlProducto(p.id)}" style="--i:${i}">
+        <img src="${esc(p.fotos[0])}" alt="${esc(p.nombre)}" width="900" height="1200" loading="${i < 2 ? "eager" : "lazy"}" decoding="async">
+      </a>`).join("");
+  }
+
+  // Botón para volver arriba: aparece después de bajar un buen tramo.
+  function iniciarSubir() {
+    const btn = document.getElementById("subir");
+    if (!btn) return;
+    let pendiente = false;
+    const revisar = () => {
+      pendiente = false;
+      btn.classList.toggle("visible", window.scrollY > window.innerHeight * 1.2);
+    };
+    window.addEventListener("scroll", () => {
+      if (!pendiente) { pendiente = true; requestAnimationFrame(revisar); }
+    }, { passive: true });
+    btn.addEventListener("click", () => {
+      const reducido = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      window.scrollTo({ top: 0, behavior: reducido ? "auto" : "smooth" });
+      const destino = document.querySelector(".brand");
+      if (destino) destino.focus({ preventScroll: true });
+    });
+    revisar();
+  }
+
   window.Tienda = {
     precio, tienePrecio, esc, normalizar, icono, media, foto, sinFoto, tarjeta, mensajes, linkWhatsApp,
     urlCatalogo, urlProducto, categoria: (id) => catPorId.get(id), producto: (id) => prodPorId.get(id),
   };
 
+  document.querySelectorAll("[data-anio]").forEach((el) => { el.textContent = new Date().getFullYear(); });
+
   iniciarTema();
   iniciarWhatsAppGeneral();
+  iniciarHero();
   iniciarCatalogo();
+  iniciarSubir();
 })();

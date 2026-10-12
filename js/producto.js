@@ -55,14 +55,11 @@
           </div>
         </div>
         <div class="acciones">
-          <a class="btn btn--secundario" href="${T.linkWhatsApp(msj.consulta)}" target="_blank" rel="noopener" data-wa="consulta">
-            ${T.icono("charla")}<span>Consultar disponibilidad</span>
-          </a>
-          <a class="btn btn--primario" href="${T.linkWhatsApp(msj.pedido)}" target="_blank" rel="noopener" data-wa="pedido">
-            ${T.icono("bolsa")}<span>Lo quiero</span>
+          <a class="btn btn--primario btn--wa" href="${T.linkWhatsApp(msj.pedido)}" target="_blank" rel="noopener" data-wa="pedido">
+            ${T.icono("charla")}<span>Pedir por WhatsApp</span>
           </a>
         </div>
-        <p class="acciones-ayuda">Los dos botones abren WhatsApp con el mensaje listo para enviar.</p>
+        <p class="acciones-ayuda">Se abre WhatsApp con el mensaje listo para enviar: te confirmo talles y coordinamos.</p>
       </div>
     </article>`;
 

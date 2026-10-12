@@ -60,20 +60,25 @@
         <svg class="icon icono-sol" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2.8v2.2M12 19v2.2M2.8 12H5M19 12h2.2M5.5 5.5l1.5 1.5M17 17l1.5 1.5M5.5 18.5L7 17M17 7l1.5-1.5"/></svg>
       </button>
     </div>
-    <div class="wrap intro">
-      <div class="intro-copy">
-        <h1 class="intro-titulo">Catálogo y precios</h1>
-        <p class="intro-texto">Elegí lo que te guste y escribime por WhatsApp: te cuento qué talles tengo y coordinamos.</p>
-      </div>
-      <form class="buscador" id="buscador" role="search" autocomplete="off">
-        <label class="sr-only" for="buscar">Buscar por nombre</label>
-        <svg class="icon buscador-icono" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4.2-4.2"/></svg>
-        <input id="buscar" type="search" placeholder="Buscar por nombre" enterkeyhint="search" spellcheck="false">
-        <kbd class="atajo" aria-hidden="true">/</kbd>
-        <button type="button" class="buscador-limpiar" id="buscar-limpiar" aria-label="Borrar búsqueda">
-          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11"/></svg>
-        </button>
-      </form>
+    <div class="wrap">
+      <section class="hero" aria-labelledby="hero-titulo">
+        <div class="hero-copy">
+          <p class="hero-kicker">Tienda Sweet · Catálogo</p>
+          <h1 class="hero-titulo" id="hero-titulo">Catálogo <span>y precios</span></h1>
+          <p class="hero-texto">Elegí lo que te guste y escribime por WhatsApp: te cuento qué talles tengo y coordinamos.</p>
+          <a class="btn btn--primario hero-cta" href="#secciones">Ver catálogo <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 5v14M6 13l6 6 6-6"/></svg></a>
+          <form class="buscador hero-buscador" id="buscador" role="search" autocomplete="off">
+            <label class="sr-only" for="buscar">Buscar por nombre</label>
+            <svg class="icon buscador-icono" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4.2-4.2"/></svg>
+            <input id="buscar" type="search" placeholder="Buscar por nombre" enterkeyhint="search" spellcheck="false">
+            <kbd class="atajo" aria-hidden="true">/</kbd>
+            <button type="button" class="buscador-limpiar" id="buscar-limpiar" aria-label="Borrar búsqueda">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11"/></svg>
+            </button>
+          </form>
+        </div>
+        <div class="hero-mosaico" id="hero-mosaico" aria-label="Algunos productos"></div>
+      </section>
     </div>
   </header>
 
@@ -131,10 +136,20 @@
       </ul>
       <div class="footer-row">
         <p><strong>Tienda Sweet</strong> · Consultas y pedidos por WhatsApp.</p>
-        <a class="footer-wa" data-wa-general href="https://wa.me/" target="_blank" rel="noopener">Escribime</a>
       </div>
-      <p class="firma">Hecho por Mailen Acosta Vera</p>
+      <div class="firma">
+        <p>© <span data-anio>2026</span> Tienda Sweet · Todos los derechos reservados.</p>
+        <p>Hecho por Mailen Acosta Vera</p>
+      </div>
     </div>
   </footer>
+  <div class="flotantes">
+    <button type="button" class="flot flot--subir" id="subir" aria-label="Volver arriba">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+    </button>
+    <a class="flot flot--wa" data-wa-general href="https://wa.me/" target="_blank" rel="noopener" aria-label="Escribime por WhatsApp">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 11.6a7.6 7.6 0 0 1-11.1 6.7L4.5 19.5l1.3-4.1A7.6 7.6 0 1 1 20 11.6z"/><path d="M9.2 9.4c.3 1.9 1.6 3.6 3.6 4.4l1-.9 1.5.8"/></svg>
+    </a>
+  </div>
 </body>
 </html>

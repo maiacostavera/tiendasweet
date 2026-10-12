@@ -225,34 +225,83 @@ h1, h2, h3, p { margin: 0; }
   to { transform: none; opacity: 1; }
 }
 
-/* Portada: título y texto con aire, el buscador debajo (no queda fijo). */
-.intro {
+/* ---------- Hero ---------- */
+
+.hero {
   display: grid;
   gap: 22px;
-  padding-block: 30px 26px;
+  margin-top: 18px;
+  padding: 26px 20px 20px;
+  border-radius: calc(var(--radius) + 10px);
+  background: color-mix(in oklab, var(--accent) 14%, var(--surface));
+  overflow: hidden;
 }
-.intro-titulo {
-  font-size: clamp(1.6rem, 6.4vw, 2.4rem);
-  font-weight: 800;
-  letter-spacing: -.03em;
-  line-height: 1.1;
+.hero-kicker {
+  font-family: var(--font-mono);
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ink-2);
 }
-.intro-texto {
+.hero-titulo {
   margin-top: 10px;
-  max-width: 44ch;
+  font-size: clamp(2rem, 9vw, 3.4rem);
+  font-weight: 800;
+  letter-spacing: -.035em;
+  line-height: 1.02;
+}
+.hero-titulo span { color: var(--accent); }
+.hero-texto {
+  margin-top: 12px;
+  max-width: 40ch;
   color: var(--ink-2);
   font-size: 1rem;
   line-height: 1.55;
 }
+.hero-cta { margin-top: 20px; }
+.hero-cta .icon { transition: transform .25s var(--ease); }
+.hero-cta:hover .icon { transform: translateY(2px); }
+
+.hero-mosaico {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+}
+.hero-foto {
+  display: block;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: #fff;
+  box-shadow: var(--shadow);
+  animation: aparecer .6s var(--ease) both;
+  animation-delay: calc(var(--i, 0) * 80ms + 120ms);
+}
+.hero-foto img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s var(--ease); }
+.hero-foto:hover img { transform: scale(1.04); }
 
 @media (min-width: 768px) {
-  .intro {
-    grid-template-columns: minmax(0, 1fr) minmax(280px, 380px);
-    align-items: end;
-    gap: 40px;
-    padding-block: 40px 30px;
+  .hero {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+    align-items: center;
+    gap: 36px;
+    margin-top: 24px;
+    padding: 44px 44px;
   }
+  .hero-mosaico { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  /* escalonado: la columna derecha baja un poco */
+  .hero-foto:nth-child(even) { translate: 0 22px; }
+  .hero-foto:nth-child(n+3) { margin-top: -10px; }
 }
+@media (min-width: 1100px) {
+  .hero-mosaico { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .hero-foto:nth-child(n+3) { margin-top: 0; }
+}
+
+/* El buscador vive dentro del hero, debajo del botón */
+.hero-buscador { margin-top: 18px; max-width: 460px; }
+.hero { margin-bottom: 14px; }
 
 /* ---------- Buscador y chips ---------- */
 
@@ -614,18 +663,38 @@ h1, h2, h3, p { margin: 0; }
   background: var(--accent);
 }
 
-.card-more {
+/* Botón visible en cada tarjeta: deja claro que se puede tocar. */
+.card-cta {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  margin-top: 16px;
-  font-size: .88rem;
+  margin-top: 10px;
+  padding: 7px 12px 7px 14px;
+  border-radius: 999px;
+  border: 1.5px solid var(--ink);
+  font-size: .82rem;
   font-weight: 700;
-  border-bottom: 1.5px solid currentColor;
-  padding-bottom: 1px;
+  transition: background-color .2s, color .2s;
 }
-.card-more .icon { width: 16px; height: 16px; transition: transform .25s var(--ease); }
-.card--destacado:hover .card-more .icon { transform: translateX(3px); }
+.card-cta .icon { width: 15px; height: 15px; transition: transform .25s var(--ease); }
+.card:hover .card-cta { background: var(--ink); color: var(--bg); }
+.card:hover .card-cta .icon { transform: translateX(3px); }
+.card--destacado .card-cta {
+  margin-top: 16px;
+  padding: 9px 16px 9px 18px;
+  background: var(--ink);
+  color: var(--bg);
+  font-size: .9rem;
+}
+
+/* La tarjeta entera se levanta al pasar el mouse */
+.card { transition: translate .25s var(--ease), scale .15s var(--ease); }
+.card .media { transition: box-shadow .25s var(--ease); }
+@media (hover: hover) {
+  .card:hover { translate: 0 -3px; }
+  .card:hover .media { box-shadow: var(--shadow); }
+}
+.card:active { scale: .985; }
 
 /* ---------- Estado "sin foto" ---------- */
 
@@ -903,7 +972,7 @@ h1, h2, h3, p { margin: 0; }
   bottom: 0;
   z-index: 30;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 10px;
   padding: 12px var(--gutter) calc(12px + env(safe-area-inset-bottom));
   background: var(--bg);
@@ -919,9 +988,7 @@ h1, h2, h3, p { margin: 0; }
   to { transform: none; }
 }
 
-@media (max-width: 380px) {
-  .acciones .btn--secundario .icon { display: none; }
-}
+.btn--wa { min-width: 240px; }
 
 @media (min-width: 860px) {
   .ficha {
@@ -1046,20 +1113,72 @@ h1, h2, h3, p { margin: 0; }
 }
 
 .firma {
-  padding: 14px 0 26px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 4px 20px;
+  /* deja lugar para los botones flotantes */
+  padding: 14px 76px 26px 0;
   border-top: 1px solid var(--line);
   color: var(--ink-2);
   font-size: .85rem;
 }
-.footer-wa {
-  display: inline-flex;
-  align-items: center;
-  min-height: 44px;
-  color: var(--ink);
-  font-weight: 700;
-  text-underline-offset: 3px;
-}
 
+/* ---------- Botones flotantes ---------- */
+
+.flotantes {
+  position: fixed;
+  right: var(--gutter);
+  bottom: calc(16px + env(safe-area-inset-bottom));
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  pointer-events: none;
+}
+.flot {
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+  pointer-events: auto;
+  transition: transform .2s var(--ease), opacity .25s var(--ease), box-shadow .2s;
+}
+.flot:focus-visible { border-radius: 999px; }
+.flot--wa {
+  width: 58px;
+  height: 58px;
+  background: #1FAF5A;   /* verde WhatsApp, con contraste para el ícono blanco */
+  color: #fff;
+  box-shadow: 0 8px 22px -6px rgb(31 175 90 / .55);
+  animation: aparecer .5s var(--ease) both .4s;
+}
+.flot--wa .icon { width: 28px; height: 28px; stroke-width: 1.9; }
+.flot--wa:hover { transform: scale(1.06); }
+.flot--subir {
+  width: 44px;
+  height: 44px;
+  background: var(--surface);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  opacity: 0;
+  transform: translateY(12px);
+  visibility: hidden;
+}
+.flot--subir.visible { opacity: 1; transform: none; visibility: visible; }
+.flot--subir:hover { border-color: var(--ink-2); }
+
+/* En la ficha (celular) el botón de pedido ya es de WhatsApp: el flotante se
+   corre arriba de la barra y queda solo el de "subir". */
+.con-acciones .flotantes { bottom: calc(92px + env(safe-area-inset-bottom)); }
+.con-acciones .flot--wa { display: none; }
+@media (min-width: 860px) {
+  .con-acciones .flotantes { bottom: calc(16px + env(safe-area-inset-bottom)); }
+  .con-acciones .flot--wa { display: grid; }
+}
 /* ---------- Movimiento reducido ---------- */
 
 @media (prefers-reduced-motion: reduce) {

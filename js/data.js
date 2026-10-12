@@ -28,10 +28,6 @@
      Ideal: fotos verticales 3:4 (como salen del celular), de unos 1200 px
      de alto. Si una ruta está mal, la tarjeta muestra "Foto próximamente".
 
-   MENSAJE DE WHATSAPP
-     El mensaje de consulta dice "Vi la Remera floral…": el artículo
-     (el/la/los/las) se calcula solo a partir del nombre. Si para algún
-     producto sale mal, agregale  articulo: "el"  (o "la", "los", "las").
    ===================================================================== */
 
 /* >>> NÚMERO DE WHATSAPP <<<
