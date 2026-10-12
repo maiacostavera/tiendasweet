@@ -45,7 +45,7 @@
       <div class="ficha-info">
         <a class="ficha-cat" href="${T.urlCatalogo(cat.id)}"><span class="chip-dot" aria-hidden="true"></span>${T.esc(cat.nombre)}</a>
         <h1 class="ficha-nombre">${T.esc(p.nombre)}</h1>
-        <p class="ficha-precio">${T.precio(p.precio)}</p>
+        <p class="ficha-precio${T.tienePrecio(p) ? "" : " sin-precio"}">${T.precio(p.precio)}</p>
         ${p.nota ? `<p class="ficha-nota">${T.esc(p.nota)}</p>` : ""}
         <div class="talles">
           ${T.icono("percha", "talles-icono")}

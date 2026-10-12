@@ -12,8 +12,16 @@
     maximumFractionDigits: 0,
   });
 
-  // "$ 15.000" -> "$15.000" (Intl pone un espacio duro entre el signo y el número)
+  const SIN_PRECIO = "Consultar precio";
+
+  function tienePrecio(p) {
+    return typeof p.precio === "number" && p.precio > 0;
+  }
+
+  // "$ 15.000" -> "$15.000" (Intl pone un espacio duro entre el signo y el número).
+  // Sin precio cargado (null) devuelve "Consultar precio".
   function precio(n) {
+    if (typeof n !== "number" || !(n > 0)) return SIN_PRECIO;
     return formatoPrecio
       .formatToParts(n)
       .filter((p) => !(p.type === "literal" && /^\s+$/.test(p.value)))
@@ -77,7 +85,9 @@
   function mensajes(p) {
     return {
       consulta: `Hola! Vi ${articulo(p)} ${p.nombre} en el catálogo de Tienda Sweet. ¿Qué talles tenés?`,
-      pedido: `Hola! Quiero pedir: ${p.nombre} — ${precio(p.precio)} (Tienda Sweet)`,
+      pedido: tienePrecio(p)
+        ? `Hola! Quiero pedir: ${p.nombre} — ${precio(p.precio)} (Tienda Sweet)`
+        : `Hola! Quiero pedir: ${p.nombre} (Tienda Sweet). ¿Qué precio tiene?`,
     };
   }
 
@@ -116,7 +126,7 @@
         ${grande ? '<span class="card-flag">Destacado</span>' : ""}
         ${o.conCategoria ? `<span class="card-cat">${esc(c.nombre)}</span>` : ""}
         <h3 class="card-name">${esc(p.nombre)}</h3>
-        <p class="card-price">${precio(p.precio)}</p>
+        <p class="card-price${tienePrecio(p) ? "" : " sin-precio"}">${precio(p.precio)}</p>
         ${p.nota ? `<p class="card-nota">${esc(p.nota)}</p>` : ""}
         ${grande ? `<span class="card-more">Ver ficha ${icono("flecha")}</span>` : ""}
       </div>
@@ -356,7 +366,7 @@
   }
 
   window.Tienda = {
-    precio, esc, normalizar, icono, media, foto, sinFoto, tarjeta, mensajes, linkWhatsApp,
+    precio, tienePrecio, esc, normalizar, icono, media, foto, sinFoto, tarjeta, mensajes, linkWhatsApp,
     urlCatalogo, urlProducto, categoria: (id) => catPorId.get(id), producto: (id) => prodPorId.get(id),
   };
 

@@ -43,7 +43,9 @@ cambiá los datos:
 - **destacado**: `true` para que la tarjeta salga más grande.
 - **nota**: aclaración corta ("Últimas unidades"). Vacía (`""`) no se muestra.
 
-Para cambiar un precio, cambiá solo el número.
+Para cambiar un precio, cambiá solo el número. Si un producto todavía no tiene
+precio, poné `precio: null`: se muestra "Consultar precio" y el mensaje de
+"Lo quiero" pregunta el precio.
 
 ## Agregar fotos
 

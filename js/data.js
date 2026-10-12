@@ -5,6 +5,8 @@
    CAMBIAR UN PRECIO
      Buscá el producto y cambiá el número de "precio".
      Sin puntos, sin $ y sin comillas: 15000 (no "$15.000").
+     Si todavía no tiene precio, poné  precio: null  y se muestra
+     "Consultar precio" (el botón "Lo quiero" pregunta el precio).
 
    AGREGAR UN PRODUCTO
      Copiá una línea de PRODUCTOS, pegala debajo de su categoría y cambiá
@@ -54,13 +56,14 @@ const CATEGORIAS = [
 
 const PRODUCTOS = [
   // Remeras y musculosas
-  { id: "remeras",           nombre: "Remeras",           categoria: "remeras-y-musculosas", precio: 20000, fotos: ["assets/productos/remeras-1.jpg", "assets/productos/remeras-2.jpg"], destacado: true,  nota: "" },
+  { id: "remeras",           nombre: "Remeras",           categoria: "remeras-y-musculosas", precio: 20000, fotos: ["assets/productos/remeras-1.jpg", "assets/productos/remeras-2.jpg", "assets/productos/remeras-3.jpg"], destacado: true,  nota: "" },
+  { id: "remera-manga-larga", nombre: "Remera manga larga", categoria: "remeras-y-musculosas", precio: null, fotos: ["assets/productos/remera-manga-larga-1.jpg"], destacado: false, nota: "" },
   { id: "remera-floral",     nombre: "Remera floral",     categoria: "remeras-y-musculosas", precio: 15000, fotos: ["assets/productos/remera-floral-1.jpg"], destacado: false, nota: "" },
-  { id: "chombas",           nombre: "Chombas",           categoria: "remeras-y-musculosas", precio: 20000, fotos: [], destacado: false, nota: "" },
+  { id: "chombas",           nombre: "Chombas",           categoria: "remeras-y-musculosas", precio: 20000, fotos: ["assets/productos/chombas-1.jpg"], destacado: false, nota: "" },
   { id: "musculosas",        nombre: "Musculosas",        categoria: "remeras-y-musculosas", precio: 18000, fotos: ["assets/productos/musculosas-1.jpg", "assets/productos/musculosas-2.jpg", "assets/productos/musculosas-3.jpg"], destacado: true,  nota: "" },
   { id: "musculosa-de-nina", nombre: "Musculosa de niña", categoria: "remeras-y-musculosas", precio: 15000, fotos: ["assets/productos/musculosa-de-nina-1.jpg"], destacado: false, nota: "" },
   { id: "musculosa-verde",   nombre: "Musculosa verde",   categoria: "remeras-y-musculosas", precio: 12000, fotos: ["assets/productos/musculosa-verde-1.jpg"], destacado: false, nota: "" },
-  { id: "camisa-escocesa",   nombre: "Camisa escocesa",   categoria: "remeras-y-musculosas", precio: 25000, fotos: [], destacado: false, nota: "" },
+  { id: "camisa-escocesa",   nombre: "Camisa escocesa",   categoria: "remeras-y-musculosas", precio: 25000, fotos: ["assets/productos/camisa-escocesa-1.jpg"], destacado: false, nota: "" },
 
   // Bermudas y shorts
   { id: "bermudas-de-gabardina", nombre: "Bermudas de gabardina", categoria: "bermudas-y-shorts", precio: 22000, fotos: ["assets/productos/bermudas-de-gabardina-1.jpg"], destacado: false, nota: "" },
@@ -68,6 +71,7 @@ const PRODUCTOS = [
   { id: "bermudas-de-algodon",   nombre: "Bermudas de algodón",   categoria: "bermudas-y-shorts", precio: 15000, fotos: [], destacado: false, nota: "" },
   { id: "shorts-de-bano",        nombre: "Shorts de baño",        categoria: "bermudas-y-shorts", precio: 22000, fotos: ["assets/productos/shorts-de-bano-1.jpg", "assets/productos/shorts-de-bano-2.jpg"], destacado: false, nota: "" },
   { id: "short-talle-3",         nombre: "Short talle 3",         categoria: "bermudas-y-shorts", precio: 15000, fotos: [], destacado: false, nota: "" },
+  { id: "bermuda-cargo-negra",   nombre: "Bermuda cargo negra",   categoria: "bermudas-y-shorts", precio: null,  fotos: ["assets/productos/bermuda-cargo-negra-1.jpg"], destacado: false, nota: "" },
 
   // Vestidos y camisones
   { id: "vestido-de-flores", nombre: "Vestido de flores", categoria: "vestidos-y-camisones", precio: 20000, fotos: ["assets/productos/vestido-de-flores-1.jpg"], destacado: false, nota: "" },
@@ -80,6 +84,7 @@ const PRODUCTOS = [
   // Conjuntos
   { id: "conjunto-animal-print",   nombre: "Conjunto animal print",   categoria: "conjuntos", precio: 28000, fotos: ["assets/productos/conjunto-animal-print-1.jpg"], destacado: false, nota: "" },
   { id: "conjunto-de-nena-blanco", nombre: "Conjunto de nena blanco", categoria: "conjuntos", precio: 20000, fotos: [], destacado: false, nota: "" },
+  { id: "conjunto-motos",          nombre: "Conjunto motos",          categoria: "conjuntos", precio: null,  fotos: ["assets/productos/conjunto-motos-1.jpg"], destacado: false, nota: "" },
 
   // Ropa de nena
   { id: "calzas-de-nena",    nombre: "Calzas de nena",    categoria: "ropa-de-nena", precio: 12000, fotos: [], destacado: false, nota: "" },
