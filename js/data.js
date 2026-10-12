@@ -69,7 +69,7 @@ const PRODUCTOS = [
   { id: "bermudas-de-gabardina", nombre: "Bermudas de gabardina", categoria: "bermudas-y-shorts", precio: 22000, fotos: ["assets/productos/bermudas-de-gabardina-1.jpg"], destacado: false, nota: "" },
   { id: "bermudas-de-jean",      nombre: "Bermudas de jean",      categoria: "bermudas-y-shorts", precio: 28000, fotos: ["assets/productos/bermudas-de-jean-1.jpg"], destacado: false, nota: "" },
   { id: "bermudas-de-algodon",   nombre: "Bermudas de algodón",   categoria: "bermudas-y-shorts", precio: 15000, fotos: [], destacado: false, nota: "" },
-  { id: "shorts-de-bano",        nombre: "Shorts de baño",        categoria: "bermudas-y-shorts", precio: 22000, fotos: ["assets/productos/shorts-de-bano-1.jpg", "assets/productos/shorts-de-bano-2.jpg", "assets/productos/shorts-de-bano-3.jpg"], destacado: false, nota: "" },
+  { id: "shorts-de-bano",        nombre: "Shorts de baño",        categoria: "bermudas-y-shorts", precio: 22000, fotos: ["assets/productos/shorts-de-bano-1.jpg", "assets/productos/shorts-de-bano-2.jpg", "assets/productos/shorts-de-bano-3.jpg", "assets/productos/shorts-de-bano-4.jpg"], destacado: false, nota: "" },
   { id: "short-talle-3",         nombre: "Short talle 3",         categoria: "bermudas-y-shorts", precio: 15000, fotos: [], destacado: false, nota: "" },
   { id: "bermuda-cargo-negra",   nombre: "Bermuda cargo negra",   categoria: "bermudas-y-shorts", precio: null,  fotos: ["assets/productos/bermuda-cargo-negra-1.jpg"], destacado: false, nota: "" },
 
@@ -91,7 +91,7 @@ const PRODUCTOS = [
   { id: "bombachas-de-nena", nombre: "Bombachas de nena", categoria: "ropa-de-nena", precio: 15000, fotos: ["assets/productos/bombachas-de-nena-1.jpg"], destacado: false, nota: "Pack x 3" },
 
   // Ropa interior
-  { id: "boxers",            nombre: "Boxers",            categoria: "ropa-interior", precio: 22000, fotos: ["assets/productos/boxers-1.jpg"], destacado: false, nota: "" },
+  { id: "boxers",            nombre: "Boxers",            categoria: "ropa-interior", precio: 22000, fotos: ["assets/productos/boxers-1.jpg", "assets/productos/boxers-2.jpg"], destacado: false, nota: "" },
   { id: "slip",              nombre: "Slip",              categoria: "ropa-interior", precio: 12000, fotos: ["assets/productos/slip-1.jpg"], destacado: false, nota: "" },
   { id: "corpino-deportivo", nombre: "Corpiño deportivo", categoria: "ropa-interior", precio: 20000, fotos: [], destacado: false, nota: "" },
   { id: "corpino-blanco",    nombre: "Corpiño blanco",    categoria: "ropa-interior", precio: null,  fotos: ["assets/productos/corpino-blanco-1.jpg"], destacado: false, nota: "" },
