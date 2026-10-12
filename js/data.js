@@ -56,11 +56,11 @@ const CATEGORIAS = [
 
 const PRODUCTOS = [
   // Remeras y musculosas
-  { id: "remeras",           nombre: "Remeras",           categoria: "remeras-y-musculosas", precio: 20000, fotos: ["assets/productos/remeras-1.jpg", "assets/productos/remeras-2.jpg", "assets/productos/remeras-3.jpg", "assets/productos/remeras-4.jpg", "assets/productos/remeras-5.jpg", "assets/productos/remeras-6.jpg"], destacado: true,  nota: "" },
+  { id: "remeras",           nombre: "Remeras",           categoria: "remeras-y-musculosas", precio: 20000, fotos: ["assets/productos/remeras-1.jpg", "assets/productos/remeras-2.jpg", "assets/productos/remeras-3.jpg", "assets/productos/remeras-4.jpg", "assets/productos/remeras-5.jpg", "assets/productos/remeras-6.jpg", "assets/productos/remeras-7.jpg", "assets/productos/remeras-8.jpg"], destacado: true,  nota: "" },
   { id: "remera-manga-larga", nombre: "Remera manga larga", categoria: "remeras-y-musculosas", precio: null, fotos: ["assets/productos/remera-manga-larga-1.jpg"], destacado: false, nota: "" },
   { id: "remera-floral",     nombre: "Remera floral",     categoria: "remeras-y-musculosas", precio: 15000, fotos: ["assets/productos/remera-floral-1.jpg"], destacado: false, nota: "" },
   { id: "chombas",           nombre: "Chombas",           categoria: "remeras-y-musculosas", precio: 20000, fotos: ["assets/productos/chombas-1.jpg", "assets/productos/chombas-2.jpg"], destacado: false, nota: "" },
-  { id: "musculosas",        nombre: "Musculosas",        categoria: "remeras-y-musculosas", precio: 18000, fotos: ["assets/productos/musculosas-1.jpg", "assets/productos/musculosas-2.jpg", "assets/productos/musculosas-3.jpg", "assets/productos/musculosas-4.jpg"], destacado: true,  nota: "" },
+  { id: "musculosas",        nombre: "Musculosas",        categoria: "remeras-y-musculosas", precio: 18000, fotos: ["assets/productos/musculosas-1.jpg", "assets/productos/musculosas-2.jpg", "assets/productos/musculosas-3.jpg", "assets/productos/musculosas-4.jpg", "assets/productos/musculosas-5.jpg"], destacado: true,  nota: "" },
   { id: "musculosa-de-nina", nombre: "Musculosa de niña", categoria: "remeras-y-musculosas", precio: 15000, fotos: ["assets/productos/musculosa-de-nina-1.jpg"], destacado: false, nota: "" },
   { id: "musculosa-verde",   nombre: "Musculosa verde",   categoria: "remeras-y-musculosas", precio: 12000, fotos: ["assets/productos/musculosa-verde-1.jpg"], destacado: false, nota: "" },
   { id: "camisa-escocesa",   nombre: "Camisa escocesa",   categoria: "remeras-y-musculosas", precio: 25000, fotos: ["assets/productos/camisa-escocesa-1.jpg"], destacado: false, nota: "" },
