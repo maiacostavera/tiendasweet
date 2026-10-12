@@ -56,11 +56,11 @@ const CATEGORIAS = [
 
 const PRODUCTOS = [
   // Remeras y musculosas
-  { id: "remeras",           nombre: "Remeras",           categoria: "remeras-y-musculosas", precio: 20000, fotos: ["assets/productos/remeras-1.jpg", "assets/productos/remeras-2.jpg", "assets/productos/remeras-3.jpg", "assets/productos/remeras-4.jpg", "assets/productos/remeras-5.jpg", "assets/productos/remeras-6.jpg", "assets/productos/remeras-7.jpg", "assets/productos/remeras-8.jpg"], destacado: true,  nota: "" },
+  { id: "remeras",           nombre: "Remeras",           categoria: "remeras-y-musculosas", precio: 20000, fotos: ["assets/productos/remeras-1.jpg", "assets/productos/remeras-2.jpg", "assets/productos/remeras-3.jpg", "assets/productos/remeras-4.jpg", "assets/productos/remeras-5.jpg", "assets/productos/remeras-6.jpg", "assets/productos/remeras-7.jpg", "assets/productos/remeras-8.jpg", "assets/productos/remeras-9.jpg"], destacado: true,  nota: "" },
   { id: "remera-manga-larga", nombre: "Remera manga larga", categoria: "remeras-y-musculosas", precio: null, fotos: ["assets/productos/remera-manga-larga-1.jpg"], destacado: false, nota: "" },
   { id: "remera-floral",     nombre: "Remera floral",     categoria: "remeras-y-musculosas", precio: 15000, fotos: ["assets/productos/remera-floral-1.jpg"], destacado: false, nota: "" },
   { id: "chombas",           nombre: "Chombas",           categoria: "remeras-y-musculosas", precio: 20000, fotos: ["assets/productos/chombas-1.jpg", "assets/productos/chombas-2.jpg"], destacado: false, nota: "" },
-  { id: "musculosas",        nombre: "Musculosas",        categoria: "remeras-y-musculosas", precio: 18000, fotos: ["assets/productos/musculosas-1.jpg", "assets/productos/musculosas-2.jpg", "assets/productos/musculosas-3.jpg", "assets/productos/musculosas-4.jpg", "assets/productos/musculosas-5.jpg"], destacado: true,  nota: "" },
+  { id: "musculosas",        nombre: "Musculosas",        categoria: "remeras-y-musculosas", precio: 18000, fotos: ["assets/productos/musculosas-1.jpg", "assets/productos/musculosas-2.jpg", "assets/productos/musculosas-3.jpg", "assets/productos/musculosas-4.jpg", "assets/productos/musculosas-5.jpg", "assets/productos/musculosas-6.jpg", "assets/productos/musculosas-7.jpg"], destacado: true,  nota: "" },
   { id: "musculosa-de-nina", nombre: "Musculosa de niña", categoria: "remeras-y-musculosas", precio: 15000, fotos: ["assets/productos/musculosa-de-nina-1.jpg"], destacado: false, nota: "" },
   { id: "musculosa-verde",   nombre: "Musculosa verde",   categoria: "remeras-y-musculosas", precio: 12000, fotos: ["assets/productos/musculosa-verde-1.jpg"], destacado: false, nota: "" },
   { id: "camisa-escocesa",   nombre: "Camisa escocesa",   categoria: "remeras-y-musculosas", precio: 25000, fotos: ["assets/productos/camisa-escocesa-1.jpg"], destacado: false, nota: "" },
@@ -83,7 +83,7 @@ const PRODUCTOS = [
 
   // Conjuntos
   { id: "conjunto-animal-print",   nombre: "Conjunto animal print",   categoria: "conjuntos", precio: 28000, fotos: ["assets/productos/conjunto-animal-print-1.jpg"], destacado: false, nota: "" },
-  { id: "conjunto-de-nena-blanco", nombre: "Conjunto de nena blanco", categoria: "conjuntos", precio: 20000, fotos: [], destacado: false, nota: "" },
+  { id: "conjunto-de-nena-blanco", nombre: "Conjunto de nena blanco", categoria: "conjuntos", precio: 20000, fotos: ["assets/productos/conjunto-de-nena-blanco-1.jpg"], destacado: false, nota: "" },
   { id: "conjunto-motos",          nombre: "Conjunto motos",          categoria: "conjuntos", precio: null,  fotos: ["assets/productos/conjunto-motos-1.jpg"], destacado: false, nota: "" },
 
   // Ropa de nena
@@ -92,6 +92,6 @@ const PRODUCTOS = [
 
   // Ropa interior
   { id: "boxers",            nombre: "Boxers",            categoria: "ropa-interior", precio: 22000, fotos: [], destacado: false, nota: "" },
-  { id: "slip",              nombre: "Slip",              categoria: "ropa-interior", precio: 12000, fotos: [], destacado: false, nota: "" },
+  { id: "slip",              nombre: "Slip",              categoria: "ropa-interior", precio: 12000, fotos: ["assets/productos/slip-1.jpg"], destacado: false, nota: "" },
   { id: "corpino-deportivo", nombre: "Corpiño deportivo", categoria: "ropa-interior", precio: 20000, fotos: [], destacado: false, nota: "" },
 ];
