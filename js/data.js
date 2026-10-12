@@ -54,19 +54,19 @@ const CATEGORIAS = [
 
 const PRODUCTOS = [
   // Remeras y musculosas
-  { id: "remeras",           nombre: "Remeras",           categoria: "remeras-y-musculosas", precio: 20000, fotos: [], destacado: true,  nota: "" },
-  { id: "remera-floral",     nombre: "Remera floral",     categoria: "remeras-y-musculosas", precio: 15000, fotos: [], destacado: false, nota: "" },
+  { id: "remeras",           nombre: "Remeras",           categoria: "remeras-y-musculosas", precio: 20000, fotos: ["assets/productos/remeras-1.jpg"], destacado: true,  nota: "" },
+  { id: "remera-floral",     nombre: "Remera floral",     categoria: "remeras-y-musculosas", precio: 15000, fotos: ["assets/productos/remera-floral-1.jpg"], destacado: false, nota: "" },
   { id: "chombas",           nombre: "Chombas",           categoria: "remeras-y-musculosas", precio: 20000, fotos: [], destacado: false, nota: "" },
   { id: "musculosas",        nombre: "Musculosas",        categoria: "remeras-y-musculosas", precio: 18000, fotos: ["assets/productos/musculosas-1.jpg", "assets/productos/musculosas-2.jpg"], destacado: true,  nota: "" },
   { id: "musculosa-de-nina", nombre: "Musculosa de niña", categoria: "remeras-y-musculosas", precio: 15000, fotos: ["assets/productos/musculosa-de-nina-1.jpg"], destacado: false, nota: "" },
-  { id: "musculosa-verde",   nombre: "Musculosa verde",   categoria: "remeras-y-musculosas", precio: 12000, fotos: [], destacado: false, nota: "" },
+  { id: "musculosa-verde",   nombre: "Musculosa verde",   categoria: "remeras-y-musculosas", precio: 12000, fotos: ["assets/productos/musculosa-verde-1.jpg"], destacado: false, nota: "" },
   { id: "camisa-escocesa",   nombre: "Camisa escocesa",   categoria: "remeras-y-musculosas", precio: 25000, fotos: [], destacado: false, nota: "" },
 
   // Bermudas y shorts
-  { id: "bermudas-de-gabardina", nombre: "Bermudas de gabardina", categoria: "bermudas-y-shorts", precio: 22000, fotos: [], destacado: false, nota: "" },
-  { id: "bermudas-de-jean",      nombre: "Bermudas de jean",      categoria: "bermudas-y-shorts", precio: 28000, fotos: [], destacado: false, nota: "" },
+  { id: "bermudas-de-gabardina", nombre: "Bermudas de gabardina", categoria: "bermudas-y-shorts", precio: 22000, fotos: ["assets/productos/bermudas-de-gabardina-1.jpg"], destacado: false, nota: "" },
+  { id: "bermudas-de-jean",      nombre: "Bermudas de jean",      categoria: "bermudas-y-shorts", precio: 28000, fotos: ["assets/productos/bermudas-de-jean-1.jpg"], destacado: false, nota: "" },
   { id: "bermudas-de-algodon",   nombre: "Bermudas de algodón",   categoria: "bermudas-y-shorts", precio: 15000, fotos: [], destacado: false, nota: "" },
-  { id: "shorts-de-bano",        nombre: "Shorts de baño",        categoria: "bermudas-y-shorts", precio: 22000, fotos: [], destacado: false, nota: "" },
+  { id: "shorts-de-bano",        nombre: "Shorts de baño",        categoria: "bermudas-y-shorts", precio: 22000, fotos: ["assets/productos/shorts-de-bano-1.jpg", "assets/productos/shorts-de-bano-2.jpg"], destacado: false, nota: "" },
   { id: "short-talle-3",         nombre: "Short talle 3",         categoria: "bermudas-y-shorts", precio: 15000, fotos: [], destacado: false, nota: "" },
 
   // Vestidos y camisones
@@ -75,7 +75,7 @@ const PRODUCTOS = [
   { id: "camison-azul",      nombre: "Camisón azul",      categoria: "vestidos-y-camisones", precio: 22000, fotos: [], destacado: false, nota: "" },
 
   // Mallas
-  { id: "malla-talle-4", nombre: "Malla talle 4", categoria: "mallas", precio: 15000, fotos: [], destacado: false, nota: "" },
+  { id: "malla-talle-4", nombre: "Malla talle 4", categoria: "mallas", precio: 15000, fotos: ["assets/productos/malla-talle-4-1.jpg"], destacado: false, nota: "" },
 
   // Conjuntos
   { id: "conjunto-animal-print",   nombre: "Conjunto animal print",   categoria: "conjuntos", precio: 28000, fotos: ["assets/productos/conjunto-animal-print-1.jpg"], destacado: false, nota: "" },
