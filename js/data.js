@@ -89,6 +89,6 @@ const PRODUCTOS = [
   // Ropa interior
   { id: "boxers",            nombre: "Boxers",            categoria: "ropa-interior", precio: 22000, fotos: ["assets/productos/boxers-1.jpg", "assets/productos/boxers-2.jpg"], destacado: false, nota: "" },
   { id: "slip",              nombre: "Slip",              categoria: "ropa-interior", precio: 12000, fotos: ["assets/productos/slip-1.jpg"], destacado: false, nota: "" },
-  { id: "corpino-deportivo", nombre: "Corpiño deportivo", categoria: "ropa-interior", precio: 20000, fotos: [], destacado: false, nota: "" },
+  { id: "corpino-deportivo", nombre: "Corpiño deportivo", categoria: "ropa-interior", precio: 20000, fotos: ["assets/productos/corpino-deportivo-1.jpg"], destacado: false, nota: "" },
   { id: "corpino-blanco",    nombre: "Corpiño blanco",    categoria: "ropa-interior", precio: null,  fotos: ["assets/productos/corpino-blanco-1.jpg"], destacado: false, nota: "" },
 ];
