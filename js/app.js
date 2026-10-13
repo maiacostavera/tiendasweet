@@ -1,4 +1,4 @@
-/* Tienda Sweet — utilidades compartidas, tema y catálogo (index.html).
+/* Tienda Sweet — utilidades compartidas, fondo y catálogo (index.html).
    producto.html también carga este archivo para usar las utilidades y el tema. */
 (function () {
   "use strict";
@@ -132,42 +132,32 @@
     if (p) img.outerHTML = sinFoto(p);
   }, true);
 
-  /* ---------- Tema claro / oscuro ---------- */
+  /* ---------- Fondo blanco / beige ---------- */
 
   const CLAVE_TEMA = "tiendasweet-tema";
-
-  function leerTemaGuardado() {
-    try { return localStorage.getItem(CLAVE_TEMA); } catch (e) { return null; }
-  }
 
   function iniciarTema() {
     const root = document.documentElement;
     const botones = document.querySelectorAll("[data-theme-toggle]");
     const metaColor = document.querySelector('meta[name="theme-color"]');
-    const sistema = window.matchMedia("(prefers-color-scheme: dark)");
 
     function aplicar(tema, guardar) {
       root.dataset.theme = tema;
       if (guardar) {
         try { localStorage.setItem(CLAVE_TEMA, tema); } catch (e) { /* sin almacenamiento: no pasa nada */ }
       }
-      botones.forEach((b) => {
-        b.setAttribute("aria-label", tema === "dark" ? "Cambiar a tema claro" : "Cambiar a tema oscuro");
-      });
+      botones.forEach((b) => b.setAttribute("aria-pressed", String(tema === "beige")));
       if (metaColor) metaColor.setAttribute("content", getComputedStyle(root).getPropertyValue("--bg").trim());
     }
 
-    const guardado = leerTemaGuardado();
-    aplicar(guardado === "light" || guardado === "dark" ? guardado : (sistema.matches ? "dark" : "light"), false);
+    let guardado = null;
+    try { guardado = localStorage.getItem(CLAVE_TEMA); } catch (e) { /* sin almacenamiento */ }
+    // Por defecto, blanco. El botón del sol alterna con el beige.
+    aplicar(guardado === "beige" ? "beige" : "blanco", false);
 
     botones.forEach((b) => b.addEventListener("click", () => {
-      aplicar(root.dataset.theme === "dark" ? "light" : "dark", true);
+      aplicar(root.dataset.theme === "beige" ? "blanco" : "beige", true);
     }));
-
-    // Si nunca eligió un tema, sigue al del sistema.
-    sistema.addEventListener("change", (e) => {
-      if (!leerTemaGuardado()) aplicar(e.matches ? "dark" : "light", false);
-    });
   }
 
   /* ---------- Catálogo (index.html) ---------- */

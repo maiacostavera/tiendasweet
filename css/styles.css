@@ -1,17 +1,18 @@
 /* =====================================================================
    Tienda Sweet — estilos compartidos (index.html y producto.html)
-   Paleta beige con acentos pistacho y coral. Todo el color vive en variables de :root.
+   Fondo blanco (o beige con el botón del sol), acentos pistacho y coral.
+   Todo el color vive en variables de :root.
    ===================================================================== */
 
 :root,
-:root[data-theme="light"] {
+:root[data-theme="blanco"] {
   color-scheme: light;
-  --bg: #F8F3EA;
-  --surface: #FFFDF9;
-  --surface-2: #EFE7DA;
+  --bg: #FFFFFF;
+  --surface: #FFFFFF;
+  --surface-2: #F4F0EA;
   --ink: #2A231B;
-  --ink-2: #685847;          /* texto secundario: 6.0:1 sobre --bg */
-  --line: #E6DCCB;
+  --ink-2: #685847;          /* texto secundario: 7.0:1 sobre --bg */
+  --line: #E7E0D5;
   --accent: #4A7034;         /* pistacho */
   --on-accent: #FFFFFF;
   --coral: #B04A2B;          /* botón principal: 5.4:1 con blanco */
@@ -25,24 +26,13 @@
   --mix-marca: 62%;
 }
 
-:root[data-theme="dark"] {
-  color-scheme: dark;
-  --bg: #1B1713;
-  --surface: #242019;
-  --surface-2: #2E2820;
-  --ink: #F1E9DC;
-  --ink-2: #BFB09C;          /* 8.4:1 sobre --bg */
-  --line: #3A3329;
-  --accent: #A9C98E;
-  --on-accent: #18220F;
-  --coral: #F08A6C;
-  --coral-hover: #F6A089;
-  --on-coral: #1E0E08;
-  --focus: #F08A6C;
-  --shadow: 0 1px 2px rgb(0 0 0 / .3), 0 12px 30px -16px rgb(0 0 0 / .6);
-  --mix-suave: 24%;
-  --mix-fuerte: 38%;
-  --mix-marca: 78%;
+/* Variante beige: se activa con el botón del sol (arriba a la derecha). */
+:root[data-theme="beige"] {
+  --bg: #F8F3EA;
+  --surface: #FFFDF9;
+  --surface-2: #EFE7DA;
+  --ink-2: #685847;          /* 6.0:1 sobre --bg */
+  --line: #E6DCCB;
 }
 
 :root {
@@ -217,8 +207,11 @@ h1, h2, h3, p { margin: 0; }
 .icon-btn:hover { border-color: var(--ink-2); }
 .icon-btn .icon { animation: girar .4s var(--ease); }
 
-:root[data-theme="dark"] .icono-luna,
-:root:not([data-theme="dark"]) .icono-sol { display: none; }
+/* Con fondo beige, el botón del sol queda "prendido". */
+.icon-btn[aria-pressed="true"] {
+  background: var(--surface-2);
+  border-color: var(--ink-2);
+}
 
 @keyframes girar {
   from { transform: rotate(-60deg) scale(.6); opacity: 0; }
@@ -558,6 +551,7 @@ h1, h2, h3, p { margin: 0; }
 
 .media {
   position: relative;
+  border: 1px solid var(--line);
   aspect-ratio: 3 / 4;
   overflow: hidden;
   border-radius: var(--radius);
@@ -849,8 +843,9 @@ h1, h2, h3, p { margin: 0; }
   /* minmax(0, …): muchas miniaturas no deben ensanchar la página */
   grid-template-columns: minmax(0, 1fr);
   gap: 22px;
-  /* solo opacidad: un transform acá rompería la barra fija de botones */
-  animation: fundido .5s var(--ease) both;
+  /* solo opacidad y sin quedar aplicada al terminar: si no, la barra fija de
+     botones queda debajo de las tarjetas de "También te puede gustar" */
+  animation: fundido .5s var(--ease) backwards;
 }
 
 @keyframes fundido {

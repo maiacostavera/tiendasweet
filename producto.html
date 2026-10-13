@@ -15,14 +15,14 @@
   <meta property="og:description" content="Catálogo con precios. Elegí lo que te guste y pedilo por WhatsApp.">
   <!-- <meta property="og:image" content="https://TU-DOMINIO/assets/og-tienda-sweet.jpg"> -->
 
-  <meta name="theme-color" content="#F8F3EA">
+  <meta name="theme-color" content="#FFFFFF">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 
   <script>
     (function () {
       var t = null;
       try { t = localStorage.getItem("tiendasweet-tema"); } catch (e) {}
-      if (t !== "light" && t !== "dark") t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      if (t !== "beige") t = "blanco";
       document.documentElement.dataset.theme = t;
     })();
   </script>
@@ -52,8 +52,7 @@
           <span class="brand-name">Sweet</span>
         </span>
       </a>
-      <button type="button" class="icon-btn" data-theme-toggle aria-label="Cambiar tema">
-        <svg class="icon icono-luna" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19.5 14.6A7.6 7.6 0 0 1 9.4 4.5a7.6 7.6 0 1 0 10.1 10.1z"/></svg>
+      <button type="button" class="icon-btn" data-theme-toggle aria-pressed="false" aria-label="Fondo beige">
         <svg class="icon icono-sol" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2.8v2.2M12 19v2.2M2.8 12H5M19 12h2.2M5.5 5.5l1.5 1.5M17 17l1.5 1.5M5.5 18.5L7 17M17 7l1.5-1.5"/></svg>
       </button>
     </div>

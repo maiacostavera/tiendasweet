@@ -83,7 +83,9 @@ Sweet" + descripción).
   con sus etiquetas `og:` ya escritas. El catálogo seguiría igual; solo
   cambiaría el link que se comparte.
 
-## Tema claro y oscuro
+## Fondo blanco o beige
 
-Por defecto sigue el tema del celular o la compu. Si se elige uno con el botón
-de arriba a la derecha, queda guardado en ese navegador.
+La página se ve con fondo blanco. El botón del sol (arriba a la derecha) la pasa
+a beige y lo vuelve a blanco; la elección queda guardada en ese navegador.
+Los colores están en `css/styles.css`, al principio: `:root` (blanco) y
+`[data-theme="beige"]`.
