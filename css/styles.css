@@ -929,7 +929,7 @@ h1, h2, h3, p { margin: 0; }
 
 .talles {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 14px;
   align-self: stretch;
   margin-top: 22px;
@@ -952,6 +952,26 @@ h1, h2, h3, p { margin: 0; }
   text-transform: uppercase;
 }
 .talles-texto { margin-top: 2px; font-size: 1.02rem; font-weight: 600; }
+.talles-lista {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.talles-lista li {
+  min-width: 40px;
+  padding: 5px 10px;
+  border-radius: 8px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  font-family: var(--font-mono);
+  font-size: .9rem;
+  font-weight: 700;
+  text-align: center;
+}
+.talles-nota { margin-top: 8px; font-size: .88rem; color: var(--ink); }
 
 .acciones-ayuda {
   margin-top: 12px;

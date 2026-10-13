@@ -51,7 +51,10 @@
           ${T.icono("percha", "talles-icono")}
           <div>
             <p class="talles-rotulo">Talles disponibles</p>
-            <p class="talles-texto">Consultame y te digo qué tengo.</p>
+            ${cat.talles && cat.talles.length
+              ? `<ul class="talles-lista">${cat.talles.map((t) => `<li>${T.esc(t)}</li>`).join("")}</ul>
+                 <p class="talles-nota">Consultame qué talles quedan de este modelo.</p>`
+              : '<p class="talles-texto">Consultame y te digo qué tengo.</p>'}
           </div>
         </div>
         <div class="acciones">

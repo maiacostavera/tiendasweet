@@ -38,9 +38,11 @@ const WHATSAPP = "5491126530563";
 
 
 /* Categorías en el orden en que aparecen en el catálogo.
-   "color" es el acento propio de cada una (chips, títulos y tarjetas sin foto). */
+   "color" es el acento propio de cada una (chips, títulos y tarjetas sin foto).
+   "talles" (opcional): los talles que se muestran en la ficha de cada producto
+   de esa categoría. Si no está, la ficha dice "Consultame y te digo qué tengo". */
 const CATEGORIAS = [
-  { id: "remeras-y-musculosas", nombre: "Remeras y musculosas", color: "#8DB572" },
+  { id: "remeras-y-musculosas", nombre: "Remeras y musculosas", color: "#8DB572", talles: ["8", "10", "12", "14", "16", "34"] },
   { id: "bermudas-y-shorts",    nombre: "Bermudas y shorts",    color: "#E07A5F" },
   { id: "vestidos-y-camisones", nombre: "Vestidos y camisones", color: "#F0A672" },
   { id: "mallas",               nombre: "Mallas",               color: "#7FB0D6" },
