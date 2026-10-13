@@ -1,24 +1,24 @@
 /* =====================================================================
    Tienda Sweet — estilos compartidos (index.html y producto.html)
-   Paleta "Pistacho y coral". Todo el color vive en variables de :root.
+   Paleta beige con acentos pistacho y coral. Todo el color vive en variables de :root.
    ===================================================================== */
 
 :root,
 :root[data-theme="light"] {
   color-scheme: light;
-  --bg: #F6F4EC;
-  --surface: #FDFCF7;
-  --surface-2: #ECE9DD;
-  --ink: #1E2620;
-  --ink-2: #56614F;          /* texto secundario: 5.9:1 sobre --bg */
-  --line: #DCD8C9;
-  --accent: #4F7A3A;         /* pistacho */
+  --bg: #F1E8DA;
+  --surface: #FBF7F0;
+  --surface-2: #E6DAC6;
+  --ink: #2A231B;
+  --ink-2: #685847;          /* texto secundario: 5.6:1 sobre --bg */
+  --line: #DCCDB6;
+  --accent: #4A7034;         /* pistacho */
   --on-accent: #FFFFFF;
-  --coral: #B9502F;          /* botón principal: 4.9:1 con blanco */
-  --coral-hover: #A4462A;
+  --coral: #B04A2B;          /* botón principal: 5.4:1 con blanco */
+  --coral-hover: #9A3F24;
   --on-coral: #FFFFFF;
-  --focus: #B9502F;
-  --shadow: 0 1px 2px rgb(30 38 32 / .06), 0 10px 28px -16px rgb(30 38 32 / .28);
+  --focus: #B04A2B;
+  --shadow: 0 1px 2px rgb(42 35 27 / .06), 0 10px 28px -16px rgb(42 35 27 / .28);
   /* cuánto acento de categoría se mezcla en fondos y marcas de agua */
   --mix-suave: 30%;
   --mix-fuerte: 52%;
@@ -27,14 +27,14 @@
 
 :root[data-theme="dark"] {
   color-scheme: dark;
-  --bg: #151A16;
-  --surface: #1C231E;
-  --surface-2: #252D27;
-  --ink: #ECEFE6;
-  --ink-2: #AAB5A2;          /* 8.3:1 sobre --bg */
-  --line: #333D35;
-  --accent: #9CC27F;
-  --on-accent: #142010;
+  --bg: #1B1713;
+  --surface: #242019;
+  --surface-2: #2E2820;
+  --ink: #F1E9DC;
+  --ink-2: #BFB09C;          /* 8.4:1 sobre --bg */
+  --line: #3A3329;
+  --accent: #A9C98E;
+  --on-accent: #18220F;
   --coral: #F08A6C;
   --coral-hover: #F6A089;
   --on-coral: #1E0E08;
@@ -233,7 +233,7 @@ h1, h2, h3, p { margin: 0; }
   margin-top: 18px;
   padding: 26px 20px 20px;
   border-radius: calc(var(--radius) + 10px);
-  background: color-mix(in oklab, var(--accent) 14%, var(--surface));
+  background: var(--surface-2);
   overflow: hidden;
 }
 .hero-kicker {
