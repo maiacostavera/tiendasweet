@@ -6,12 +6,12 @@
 :root,
 :root[data-theme="light"] {
   color-scheme: light;
-  --bg: #F1E8DA;
-  --surface: #FBF7F0;
-  --surface-2: #E6DAC6;
+  --bg: #F8F3EA;
+  --surface: #FFFDF9;
+  --surface-2: #EFE7DA;
   --ink: #2A231B;
-  --ink-2: #685847;          /* texto secundario: 5.6:1 sobre --bg */
-  --line: #DCCDB6;
+  --ink-2: #685847;          /* texto secundario: 6.0:1 sobre --bg */
+  --line: #E6DCCB;
   --accent: #4A7034;         /* pistacho */
   --on-accent: #FFFFFF;
   --coral: #B04A2B;          /* botón principal: 5.4:1 con blanco */
